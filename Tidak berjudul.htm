@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kritik & Saran - Yayasan Gemilang Sakti Jaya</title>
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 820px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #2e7d32;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .header .logo-icon {
+            font-size: 48px;
+            color: #2e7d32;
+            background: #e8f5e9;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            color: #1b5e20;
+            font-weight: 700;
+        }
+
+        .header h1 span {
+            color: #2e7d32;
+        }
+
+        .header .sub {
+            font-size: 14px;
+            color: #558b2f;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .header .motto {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-top: 6px;
+        }
+
+        /* ===== QR CODE SECTION ===== */
+        .qr-section {
+            background: #f9fbe7;
+            border: 2px dashed #aed581;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .qr-section:hover {
+            border-color: #2e7d32;
+            background: #f1f8e9;
+        }
+
+        .qr-section .qr-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #33691e;
+            letter-spacing: 1px;
+        }
+
+        .qr-section .qr-label i {
+            color: #25D366;
+            font-size: 18px;
+        }
+
+        .qr-section .qr-placeholder {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 15px;
+            display: inline-block;
+            margin: 12px 0 8px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .qr-section .qr-placeholder img {
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+
+        .qr-section .qr-caption {
+            font-size: 14px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .qr-section .qr-caption i {
+            color: #25D366;
+            margin-right: 6px;
+        }
+
+        .qr-section .qr-wa-number {
+            background: #25D366;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .qr-section .qr-wa-number i {
+            margin-right: 6px;
+        }
+
+        /* ===== FORM ===== */
+        .form-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1b5e20;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-title i {
+            color: #2e7d32;
+        }
+
+        .form-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .form-group label .optional {
+            font-weight: 400;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .form-group label .required {
+            color: #d32f2f;
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: 0.3s;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2e7d32;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.12);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .form-group .radio-group label {
+            font-weight: 400;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            background: #f5f5f5;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: 0.2s;
+        }
+
+        .form-group .radio-group label:hover {
+            background: #e8f5e9;
+        }
+
+        .form-group .radio-group input[type="radio"] {
+            width: auto;
+            accent-color: #2e7d32;
+        }
+
+        .form-group .rating {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .form-group .rating label {
+            font-weight: 400;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            background: #f5f5f5;
+            padding: 6px 14px;
+            border-radius: 30px;
+            transition: 0.2s;
+        }
+
+        .form-group .rating label:hover {
+            background: #e8f5e9;
+        }
+
+        .form-group .rating input[type="radio"] {
+            width: auto;
+            accent-color: #2e7d32;
+        }
+
+        /* ===== TOMBOL ===== */
+        .btn-submit {
+            background: #25D366;
+            color: #fff;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            width: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn-submit:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit i {
+            font-size: 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e8f5e9;
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .footer .address {
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .footer .address i {
+            color: #2e7d32;
+            margin-right: 6px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .qr-section .qr-placeholder img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .form-group .radio-group {
+                gap: 8px;
+            }
+
+            .form-group .radio-group label {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+
+            .form-group .rating label {
+                padding: 4px 10px;
+                font-size: 13px;
+            }
+
+            .btn-submit {
+                font-size: 16px;
+                padding: 14px 20px;
+            }
+        }
+
+        /* ===== ALERT / NOTIFIKASI ===== */
+        .alert-success {
+            display: none;
+            background: #e8f5e9;
+            border: 2px solid #2e7d32;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1b5e20;
+        }
+
+        .alert-success i {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 8px;
+            color: #25D366;
+        }
+
+        .alert-success h3 {
+            margin-bottom: 4px;
+        }
+
+        .alert-success .wa-link {
+            display: inline-block;
+            margin-top: 12px;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .alert-success .wa-link:hover {
+            background: #1da851;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="formContainer">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <div class="logo-icon">
+                <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h1>Yayasan <span>Gemilang Sakti Jaya</span></h1>
+            <div class="sub">— KRITIK &amp; SARAN ONLINE —</div>
+            <div class="motto">"Bersama Pulihkan Negeri"</div>
+        </div>
+
+        <!-- ===== QR CODE ===== -->
+        <div class="qr-section">
+            <div class="qr-label">
+                <i class="fab fa-whatsapp"></i> SCAN QR UNTUK HUBUNGI KAMI VIA WA
+            </div>
+            <div class="qr-placeholder">
+                <!-- QR Code langsung terhubung ke WhatsApp -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://wa.me/6282164565779?text=Assalamualaikum%2C%20saya%20ingin%20memberi%20kritik%2Fsaran%20untuk%20Yayasan%20Gemilang%20Sakti%20Jaya" alt="QR Code WhatsApp" />
+            </div>
+            <div class="qr-caption">
+                <i class="fas fa-phone"></i> Scan &amp; kirim pesan langsung ke
+            </div>
+            <div class="qr-wa-number">
+                <i class="fab fa-whatsapp"></i> +62 821-6456-5779
+            </div>
+        </div>
+
+        <!-- ===== ALERT ===== -->
+        <div class="alert-success" id="alertSuccess">
+            <i class="fab fa-whatsapp"></i>
+            <h3>Terima Kasih!</h3>
+            <p>Masukan Anda sangat berharga bagi kami.</p>
+            <p style="font-size:13px; color:#555; margin-top:4px;">Klik tombol di bawah untuk mengirim via WhatsApp</p>
+            <a href="https://wa.me/6282164565779?text=Assalamualaikum%2C%20saya%20ingin%20memberi%20kritik%2Fsaran%20untuk%20Yayasan%20Gemilang%20Sakti%20Jaya" target="_blank" class="wa-link">
+                <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+            </a>
+        </div>
+
+        <!-- ===== FORM ===== -->
+        <form id="saranForm" onsubmit="return handleSubmit(event)">
+
+            <div class="form-title">
+                <i class="fas fa-pen-fancy"></i> Atau Isi Form di Bawah Ini
+            </div>
+            <div class="form-desc">
+                Bantu kami terus berkembang dan melayani lebih baik. Semua masukan akan kami baca dan tindak lanjuti.
+            </div>
+
+            <!-- Pertanyaan 1 - Nama (Opsional) -->
+            <div class="form-group">
+                <label>Nama Anda <span class="optional">(opsional — boleh kosong)</span></label>
+                <input type="text" name="nama" placeholder="Cukup isi jika ingin dikenal..." />
+            </div>
+
+            <!-- Pertanyaan 2 - Peran (Wajib) -->
+            <div class="form-group">
+                <label>Peran Anda <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="peran" value="Keluarga residen" required /> Keluarga residen</label>
+                    <label><input type="radio" name="peran" value="Residen" /> Residen</label>
+                    <label><input type="radio" name="peran" value="Masyarakat umum" /> Masyarakat umum</label>
+                    <label><input type="radio" name="peran" value="Mitra kerja/instansi" /> Mitra kerja/instansi</label>
+                    <label><input type="radio" name="peran" value="Alumni yayasan" /> Alumni yayasan</label>
+                    <label><input type="radio" name="peran" value="Lainnya" /> Lainnya</label>
+                </div>
+            </div>
+
+            <!-- Pertanyaan 3 - Kritik/Saran (Wajib) -->
+            <div class="form-group">
+                <label>Kritik atau saran untuk Yayasan <span class="required">*</span></label>
+                <textarea name="kritik" placeholder="Tuliskan kritik atau saran Anda di sini..." required></textarea>
+            </div>
+
+            <!-- Pertanyaan 4 - Fasilitas (Opsional) -->
+            <div class="form-group">
+                <label>Saran untuk fasilitas rehabilitasi <span class="optional">(opsional)</span></label>
+                <textarea name="fasilitas" placeholder="Misal: ruang rawat, ruang konseling, sarana ibadah..."></textarea>
+            </div>
+
+            <!-- Pertanyaan 5 - Konselor/Tenaga Medis (Opsional) -->
+            <div class="form-group">
+                <label>Saran untuk pelayanan konselor &amp; tenaga medis <span class="optional">(opsional)</span></label>
+                <textarea name="konselor" placeholder="Masukan untuk peningkatan pelayanan konseling..."></textarea>
+            </div>
+
+            <!-- Pertanyaan 6 - Rating (Wajib) -->
+            <div class="form-group">
+                <label>Kepuasan pelayanan secara umum <span class="required">*</span></label>
+                <div class="rating">
+                    <label><input type="radio" name="rating" value="1" required /> 1 ❌</label>
+                    <label><input type="radio" name="rating" value="2" /> 2</label>
+                    <label><input type="radio" name="rating" value="3" /> 3</label>
+                    <label><input type="radio" name="rating" value="4" /> 4</label>
+                    <label><input type="radio" name="rating" value="5" /> 5 ✅</label>
+                </div>
+                <div style="font-size:12px; color:#888; margin-top:4px;">1 = Sangat Tidak Puas &nbsp;|&nbsp; 5 = Sangat Puas</div>
+            </div>
+
+            <!-- Pertanyaan 7 - Apresiasi (Opsional) -->
+            <div class="form-group">
+                <label>Apakah ada hal baik yang ingin Anda sampaikan? <span class="optional">(opsional)</span></label>
+                <textarea name="apresiasi" placeholder="Sampaikan apresiasi untuk tim yayasan..."></textarea>
+            </div>
+
+            <!-- Tombol Submit -->
+            <button type="submit" class="btn-submit">
+                <i class="fab fa-whatsapp"></i> Kirim Masukan via WhatsApp
+            </button>
+
+            <p style="text-align:center; font-size:12px; color:#999; margin-top:12px;">
+                <i class="fas fa-lock" style="margin-right:4px;"></i> Data Anda aman dan tidak akan disebarluaskan
+            </p>
+
+        </form>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer">
+            <div class="address">
+                <i class="fas fa-map-marker-alt"></i> Jalan Baru No. 7, Tembung, Deli Serdang, Sumatera Utara
+            </div>
+            <div style="font-size:12px; color:#aaa; margin-top:4px;">
+                © 2026 Yayasan Gemilang Sakti Jaya
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Nomor WhatsApp tujuan
+        const WA_NUMBER = '6282164565779';
+        const WA_MESSAGE = 'Assalamualaikum, saya ingin memberi kritik/saran untuk Yayasan Gemilang Sakti Jaya';
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            const form = document.getElementById('saranForm');
+            const data = new FormData(form);
+
+            // Validasi
+            const peran = data.get('peran');
+            const kritik = data.get('kritik')?.trim();
+            const rating = data.get('rating');
+
+            if (!peran) {
+                alert('Silakan pilih peran Anda terlebih dahulu.');
+                return false;
+            }
+
+            if (!kritik) {
+                alert('Silakan tulis kritik atau saran Anda.');
+                return false;
+            }
+
+            if (!rating) {
+                alert('Silakan pilih rating kepuasan (1-5).');
+                return false;
+            }
+
+            // Ambil semua data
+            const nama = data.get('nama') || '(tidak disebutkan)';
+            const fasilitas = data.get('fasilitas') || '(tidak diisi)';
+            const konselor = data.get('konselor') || '(tidak diisi)';
+            const apresiasi = data.get('apresiasi') || '(tidak diisi)';
+
+            // Buat pesan WhatsApp
+            let pesan = `Assalamualaikum, saya ingin memberi kritik/saran untuk Yayasan Gemilang Sakti Jaya.%0A%0A`;
+            pesan += `📋 *Data Pengirim*%0A`;
+            pesan += `Nama: ${nama}%0A`;
+            pesan += `Peran: ${peran}%0A%0A`;
+            pesan += `✏️ *Kritik/Saran*%0A${kritik}%0A%0A`;
+            pesan += `🏠 *Saran Fasilitas*%0A${fasilitas}%0A%0A`;
+            pesan += `👨‍⚕️ *Saran Konselor/Tenaga Medis*%0A${konselor}%0A%0A`;
+            pesan += `⭐ *Rating Kepuasan*: ${rating}/5%0A%0A`;
+            pesan += `🙏 *Apresiasi*%0A${apresiasi}`;
+
+            // Buat URL WhatsApp
+            const waURL = `https://wa.me/${WA_NUMBER}?text=${pesan}`;
+
+            // Tampilkan alert sukses
+            document.getElementById('saranForm').style.display = 'none';
+            document.getElementById('alertSuccess').style.display = 'block';
+
+            // Buka WhatsApp di tab baru
+            window.open(waURL, '_blank');
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
